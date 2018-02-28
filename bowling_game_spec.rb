@@ -11,7 +11,7 @@ describe 'bowling game behaviour' do
   it 'can create a new game' do
   end
 
-  it 'should roll' do
+  it 'can roll' do
     @game.roll(0)
   end
 
@@ -40,19 +40,38 @@ describe 'bowling game behaviour' do
     expect(@game.score).to eq 16
   end
 
+  #spare method
   def roll_spare
     @game.roll(5)
-    @game.roll(5) #spare
+    @game.roll(5)
   end
 
   #4rd test
   it 'can roll a X' do
-    @game.roll(10) #strike
+    @game.roll(10)
     @game.roll(3)
     @game.roll(4)
     roll_many(16,0)
     expect(@game.score).to eq 24
   end
+
+  #strike methods
+  def roll_strike
+    @game.roll(10)
+  end
+
+  #5th test
+  it 'can roll a perfect game' do
+    roll_many(12,10)
+    expect(@game.score).to eq 300
+  end
+
+  it 'can roll all spares' do
+    roll_many(21,5)
+    expect(@game.score).to eq 150
+  end
+
+
 
 end
 

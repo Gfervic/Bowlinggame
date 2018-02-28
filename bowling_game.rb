@@ -31,7 +31,7 @@ class Game
   private
   # / method
   def spare?(first_in_frame)
-    @rolls[first_in_frame] + @rolls[first_in_frame + 1] == 10
+    frameScore(first_in_frame) == 10
   end
   # X method
   def strike?(first_in_frame)
