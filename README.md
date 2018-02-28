@@ -1,2 +1,2 @@
-Bowling game
+Technical interview exercise for ChainGoTech
 
