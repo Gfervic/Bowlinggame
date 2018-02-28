@@ -1,7 +1,6 @@
 require 'rspec'
 require_relative 'bowling_game'
 
-
 describe 'bowling game behaviour' do
 
   before do
@@ -17,7 +16,6 @@ describe 'bowling game behaviour' do
   end
 
   #2test
-
   def roll_many(n, pins)
     n.times do
       @game.roll(pins)
@@ -55,7 +53,6 @@ describe 'bowling game behaviour' do
     roll_many(16,0)
     expect(@game.score).to eq 24
   end
-
 
 end
 
