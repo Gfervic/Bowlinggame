@@ -1,19 +1,19 @@
 require 'rspec'
 require_relative 'bowling_game'
 
-describe 'bowling game behaviour' do
+describe 'bowling game logic' do
 
   before do
     @game = Game.new
   end
 
-  #1test
-  it 'can create a new game' do
-  end
+  #1test (we can get rid of them with the before action)
+  # it 'can create a new game' do
+  # end
 
-  it 'can roll' do
-    @game.roll(0)
-  end
+  # it 'can roll' do
+  #   @game.roll(0)
+  # end
 
   #2test
   def roll_many(n, pins)
@@ -70,8 +70,6 @@ describe 'bowling game behaviour' do
     roll_many(21,5)
     expect(@game.score).to eq 150
   end
-
-
 
 end
 

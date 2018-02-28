@@ -28,7 +28,17 @@ class Game
     score
   end
 
-  private
+# ***TRYING TO ACCOMPLISH THE INTERFACE TO RUN IT ****
+  def self.rolls_to_array(rolls)
+    rolls.gsub!(/\n\[/,'')
+      rolls[0] = ''
+      rolls = rolls.split(/],/)
+      rolls = rolls.map { |roll| roll = roll.split(',') }
+      rolls.pop
+      return rolls
+    end
+
+    private
   # / method
   def spare?(first_in_frame)
     frameScore(first_in_frame) == 10
@@ -62,3 +72,16 @@ class Game
   end
 
 end
+
+# *** WORKING ON THE INTERFACE SIDE TO RUN IT. User input is get as a string but i need an array. ***
+puts 'Please insert your input of rolls'
+rolls = gets.chomp
+game = Game.new()
+rolls = Game.rolls_to_array(rolls)
+rolls.each do |pins|
+  game.roll(pins)
+end
+
+
+
+
