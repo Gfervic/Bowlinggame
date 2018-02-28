@@ -1,25 +1,40 @@
 require 'rspec'
 require_relative 'bowling_game'
-# 1
+
 
 describe 'bowling game behaviour' do
 
-  let(:game) {game = Game.new}
+  #1test
+
+  before do
+    @game = Game.new
+  end
 
   it 'can create a new game' do
-    # game = Game.new
   end
 
   it 'should roll' do
-    # game = Game.new
-    game.roll(0)
+    @game.roll(0)
   end
 
-  it 'should roll a gutter game' do
-    20.times do
-      game.roll(0)
+  def roll_many(n, pins)
+    n.times do
+      @game.roll(pins)
     end
-    expect(game.score).to eq 0
   end
+
+  it 'can roll a gutter game' do
+    roll_many(20,0)
+    expect(@game.score).to eq 0
+  end
+
+  #2test
+
+  it 'can roll all ones' do
+    roll_many(20,1)
+    expect(@game.score).to eq 20
+  end
+
+
 end
 
