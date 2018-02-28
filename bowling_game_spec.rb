@@ -48,6 +48,13 @@ describe 'bowling game behaviour' do
   end
 
   #4rd test
+  it 'can roll a X' do
+    @game.roll(10) #strike
+    @game.roll(3)
+    @game.roll(4)
+    roll_many(16,0)
+    expect(@game.score).to eq 24
+  end
 
 
 end
