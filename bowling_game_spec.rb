@@ -55,7 +55,7 @@ describe 'bowling game logic' do
     expect(@game.score).to eq 24
   end
 
-  #strike methods
+  #strike method
   def roll_strike
     @game.roll(10)
   end
