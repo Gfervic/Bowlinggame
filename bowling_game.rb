@@ -14,10 +14,10 @@ class Game
     first_in_frame = 0
     while frame < 10
       if spare?(first_in_frame)
-        score += 10 + @rolls[first_in_frame + 2]
+        score += spareScore(first_in_frame)
         first_in_frame += 2
       else
-        score += @rolls[first_in_frame] + @rolls[first_in_frame + 1]
+        score += frameScore(first_in_frame)
         first_in_frame += 2
       end
       frame +=1
@@ -28,6 +28,14 @@ class Game
 #spare method
   def spare?(first_in_frame)
     @rolls[first_in_frame] + @rolls[first_in_frame + 1] == 10
+  end
+
+  def spareScore(first_in_frame)
+    10 + @rolls[first_in_frame + 2]
+  end
+
+  def frameScore(first_in_frame)
+    @rolls[first_in_frame] + @rolls[first_in_frame + 1]
   end
 
 

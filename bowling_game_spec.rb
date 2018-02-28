@@ -47,6 +47,8 @@ describe 'bowling game behaviour' do
     @game.roll(5) #spare
   end
 
+  #4rd test
+
 
 end
 
